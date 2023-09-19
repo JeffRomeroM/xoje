@@ -1,54 +1,31 @@
 import React, { useState } from 'react';
-import './App.css'
+import { Route, Routes } from "react-router-dom"
+import {Menu}  from './components/menu/Menu.tsx'
+import  Favorite  from "./components/favorite/Favorite.tsx";
+import Home from "./components/home/Home.tsx";
+import Game from './components/juegos/Game';
+import {Video}  from './components/videos/Video.tsx';
 
-const opciones = ['piedra', 'papel', 'tijera'];
 
 function App() {
-  const [userChoice, setUserChoice] = useState(null);
-  const [computerChoice, setComputerChoice] = useState(null);
-  const [result, setResult] = useState(null);
-
-  const getRandomChoice = () => {
-    const randomIndex = Math.floor(Math.random() * opciones.length);
-    return opciones[randomIndex];
-  };
-
-  const handleUserChoice = (choice) => {
-    const computerChoice = getRandomChoice();
-
-    setUserChoice(choice);
-    setComputerChoice(computerChoice);
-
-    if (choice === computerChoice) {
-      setResult('Empate');
-    } else if (
-      (choice === 'piedra' && computerChoice === 'tijera') ||
-      (choice === 'papel' && computerChoice === 'piedra') ||
-      (choice === 'tijera' && computerChoice === 'papel')
-    ) {
-      setResult('Ganaste');
-    } else {
-      setResult('Perdiste');
-    }
-  };
-
+  
   return (
-    <div className="App">
-      <h1>Piedra, Papel o Tijera</h1>
-      <div className="choices">
-        {opciones.map((opcion) => (
-          <button key={opcion} onClick={() => handleUserChoice(opcion)}>
-            {opcion}
-          </button>
-        ))}
-      </div>
-      <div className="result">
-        {userChoice && <p>Tu elección: {userChoice}</p>}
-        {computerChoice && <p>Elección de la computadora: {computerChoice}</p>}
-        {result && <p>Resultado: {result}</p>}
-      </div>
-    </div>
-  );
+    <>
+      <Menu />
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="products" element={<ProductList />} />
+        <Route path="products/:id" element={<ProductItem />}/>  */}
+        <Route path="juegos" element={<Game />} />
+        <Route path="videos" element={<Video />} />
+        <Route path="favoritos" element={<Favorite />} />
+        {/* <Route path="excel" element={<Excel />} /> */}
+        
+      </Routes>
+    </>
+    
+  )
 }
 
 export default App;

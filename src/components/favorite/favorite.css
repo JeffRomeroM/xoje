@@ -1,0 +1,11 @@
+.ti{
+    text-align: center;
+    width: 100%;
+    color: red;
+    animation: color 2s linear both;
+}
+@keyframes color {
+    to{
+      color: brown;
+    }
+}

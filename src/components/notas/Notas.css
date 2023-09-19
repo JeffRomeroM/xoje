@@ -1,0 +1,108 @@
+/* Estilos globales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos del formulario de notas */
+  .note-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 400px;
+  }
+  
+  .note-form h2 {
+    margin-bottom: 10px;
+  }
+  
+  .note-form input[type="text"],
+  .note-form textarea,
+  .note-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .note-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease;
+  }
+  
+  .note-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos de las notas */
+  .notes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+  }
+  
+  .note {
+    background-color: #9b9b9b;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .note h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .note img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+  
+  .note p {
+    color: #ffffff;
+    margin-top: 10px;
+  }
+  
+  .note div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .note button {
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .note button:hover {
+    background-color: #c00;
+  }
+  
