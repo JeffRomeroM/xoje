@@ -1,23 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.css'
+
+const opciones = ['piedra', 'papel', 'tijera'];
 
 function App() {
+  const [userChoice, setUserChoice] = useState(null);
+  const [computerChoice, setComputerChoice] = useState(null);
+  const [result, setResult] = useState(null);
+
+  const getRandomChoice = () => {
+    const randomIndex = Math.floor(Math.random() * opciones.length);
+    return opciones[randomIndex];
+  };
+
+  const handleUserChoice = (choice) => {
+    const computerChoice = getRandomChoice();
+
+    setUserChoice(choice);
+    setComputerChoice(computerChoice);
+
+    if (choice === computerChoice) {
+      setResult('Empate');
+    } else if (
+      (choice === 'piedra' && computerChoice === 'tijera') ||
+      (choice === 'papel' && computerChoice === 'piedra') ||
+      (choice === 'tijera' && computerChoice === 'papel')
+    ) {
+      setResult('Ganaste');
+    } else {
+      setResult('Perdiste');
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Piedra, Papel o Tijera</h1>
+      <div className="choices">
+        {opciones.map((opcion) => (
+          <button key={opcion} onClick={() => handleUserChoice(opcion)}>
+            {opcion}
+          </button>
+        ))}
+      </div>
+      <div className="result">
+        {userChoice && <p>Tu elección: {userChoice}</p>}
+        {computerChoice && <p>Elección de la computadora: {computerChoice}</p>}
+        {result && <p>Resultado: {result}</p>}
+      </div>
     </div>
   );
 }
