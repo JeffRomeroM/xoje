@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Juego.css'
 
-const opciones = ['piedra', 'papel', 'tijera'];
+const opciones = ['piedra✊', 'papel✋', 'tijera✌'];
 
 function Game()  {
   const [userChoice, setUserChoice] = useState(null);
