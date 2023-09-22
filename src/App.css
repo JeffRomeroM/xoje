@@ -1,0 +1,28 @@
+.modalI{
+    position: absolute;
+    width: 100%;
+
+}
+.modal-content{
+    width: 90%;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(175, 175, 175);
+    border-radius: 10px;
+    z-index: 11;
+    color: white;
+}
+.modal-content h2{
+    width: 90%;
+    margin-top: 30px;
+}
+.modal-content button{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: blue;
+    margin: 10px;
+    columns: white;
+}
