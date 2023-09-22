@@ -51,7 +51,7 @@ function App() {
     // Ocultar el modal automáticamente después de 3 segundos
     const timeout = setTimeout(() => {
       setModalVisible(false);
-    }, 3000);
+    }, 7000);
 
     return () => clearTimeout(timeout);
   }, []);
