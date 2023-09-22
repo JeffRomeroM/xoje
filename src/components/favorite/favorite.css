@@ -1,11 +1,14 @@
 .ti{
     text-align: center;
     width: 100%;
-    color: red;
+    color: blue;
+}
+.ca{
+    border-radius: 10px;
     animation: color 2s linear both;
 }
 @keyframes color {
     to{
-      color: brown;
+      border-radius: 20px;
     }
 }

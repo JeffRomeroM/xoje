@@ -5,7 +5,7 @@
     right: 0;
     display: flex;
     justify-content: space-around;
-    background-color: #e2e2e2;
+    background-color: #fff;
     padding: 10px 0;
     z-index: 1;
 }
@@ -20,6 +20,9 @@
     
 }
 
+.menu-item {
+  color: gray; /* Cambia el color del ícono activo a rojo */
+}
 .menu-item.active {
-  color: red; /* Cambia el color del ícono activo a rojo */
+  color: blue; /* Cambia el color del ícono activo a rojo */
 }

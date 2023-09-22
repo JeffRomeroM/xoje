@@ -8,8 +8,17 @@ interface Note {
   imageURL: string | null;
 }
 
-export const NotesList: React.FC = () => {
+export const NotesList = () => {
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const toggleModal = () => {
+    setModalIsOpen(!modalIsOpen);
+  };
+
   const [notes, setNotes] = useState<Note[]>([]);
+  
+
   const [newNote, setNewNote] = useState<Note>({
     id: Date.now(),
     title: '',
@@ -53,7 +62,12 @@ export const NotesList: React.FC = () => {
       imageURL: null,
     });
   };
+  const agregarNotaCerrarModal  = () =>{
+    handleAddNote();
+    toggleModal();
 
+  }
+  
   const handleDeleteNote = (id: number) => {
     const updatedNotes = notes.filter((note) => note.id !== id);
     setNotes(updatedNotes);
@@ -61,8 +75,13 @@ export const NotesList: React.FC = () => {
 
   return (
     <div className="App">
-      <h1>Notas con Imágenes</h1>
-      <div className="note-form">
+      <button onClick={toggleModal} className='btn-modal'>
+        {modalIsOpen ? 'Cerrar' : 'Crear'}
+      </button>
+
+      {modalIsOpen && (
+        <div className="modal">
+          <div className="note-form">
         <input
           type="text"
           name="title"
@@ -77,8 +96,14 @@ export const NotesList: React.FC = () => {
           onChange={handleInputChange}
         ></textarea>
         <input type="file" accept="image/*" onChange={handleImageUpload} />
-        <button onClick={handleAddNote}>Agregar Nota</button>
+        <button onClick={agregarNotaCerrarModal} className='agregar'>Agregar Nota</button>
+        <button onClick={toggleModal} className='cancelar'>Cancelar</button>
       </div>
+        </div>
+      )}
+
+      <h1>Notas</h1>
+    
       <div className="notes">
         {notes.map((note) => (
           <div className="note" key={note.id}>

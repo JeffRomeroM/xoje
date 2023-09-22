@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #fff;
     text-align: center;
   }
   
@@ -11,7 +11,11 @@ body {
     color: #333;
     margin-bottom: 20px;
   }
-  
+  .modal{
+    position: absolute;
+    top: 4;
+    width: 90%;
+  }
   /* Estilos del formulario de notas */
   .note-form {
     background-color: #fff;
@@ -29,15 +33,15 @@ body {
   .note-form input[type="text"],
   .note-form textarea,
   .note-form input[type="file"] {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
   
-  .note-form button {
-    background-color: #007bff;
+  .note-form .agregar {
+    background-color: blue;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -46,10 +50,18 @@ body {
     width: 100%;
     transition: background-color 0.2s ease;
   }
-  
-  .note-form button:hover {
-    background-color: #0056b3;
+  .note-form .cancelar {
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
   }
+  
   
   /* Estilos de las notas */
   .notes {
@@ -106,3 +118,7 @@ body {
     background-color: #c00;
   }
   
+  .btn-modal{
+    background-color: blue;
+    float: right;
+  }

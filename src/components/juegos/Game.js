@@ -37,6 +37,7 @@ function Game()  {
     
 
     <div className="App">
+      
       <h1>Piedra, Papel o Tijera</h1>
       <div className="choices">
         {opciones.map((opcion) => (
