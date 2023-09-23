@@ -1,0 +1,19 @@
+.produ{
+    width: 100%;
+    
+
+}
+.produ li{
+    width: 300px;
+    background-color: gray;
+    margin: 50px;
+    list-style: none;
+    padding: 20px;
+    color: white;
+
+}
+.produ li button{
+    width: 100%;
+    margin-top: 20px;
+
+}

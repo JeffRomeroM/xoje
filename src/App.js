@@ -5,6 +5,7 @@ import  Favorite  from "./components/favorite/Favorite.tsx";
 import Arriba from "./components/menuArriba/Arriba.tsx";
 import Home from "./components/home/Home.tsx";
 import Game from './components/juegos/Game';
+import Products from './components/products/Products.js';
 import {Video}  from './components/videos/Video.tsx';
 import { NotesList } from './components/notas/NotesList.tsx';
 import './App.css'
@@ -81,6 +82,7 @@ function App() {
         <Route path="videos" element={<Video />} />
         <Route path="favoritos" element={<Favorite />} />
         <Route path="notas" element={<NotesList />} />
+        <Route path="productos" element={<Products />} />
         {/* <Route path="excel" element={<Excel />} /> */}
         
       </Routes>

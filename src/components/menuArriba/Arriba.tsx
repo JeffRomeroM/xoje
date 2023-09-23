@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Arriba.css'
 
 import { FaUserAstronaut } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const MenuHamburguesa = () => {
   const [menuAbierto, setMenuAbierto] = useState(false);
@@ -37,7 +38,13 @@ const MenuHamburguesa = () => {
           <img src="./lo512.png" alt="hyuk" />
           <ul>
             <li>Inicio</li>
-            <li>Acerca de</li>
+            <li>
+            <Link 
+              to="/productos"
+            >
+              Productos
+            </Link>
+            </li>
             <li>Servicios</li>
             <li>Contacto</li>
           </ul>
